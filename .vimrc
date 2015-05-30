@@ -14,7 +14,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 " vundle 配置安装
-
+Bundle 'scrooloose/nerdtree.vim'
 Bundle 'ZenCoding.vim'
 Bundle 'taglist.vim'
 if iCanHazVundle == 0
@@ -26,7 +26,7 @@ filetype plugin indent  on
 "包管理
 
 let Tlist_Auto_Highlight_Tag=1 
-let Tlist_Auto_Open=1 
+" let Tlist_Auto_Open=1 
 let Tlist_Auto_Update=1 
 let Tlist_Display_Tag_Scope=1 
 let Tlist_Exit_OnlyWindow=1 
@@ -40,7 +40,7 @@ nnoremap <silent><F4> :TlistToggle<CR>
 " taglist
 
 syntax on
-autocmd FileType python setlocal et sta sw=4 sts=4 expandtab
+autocmd FileType python setlocal et sta sw=4 sts=4 expandtab foldmethod=identity
 " 设置python缩进风格 
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascrīpt set omnifunc=javascriptcomplete#CompleteJS 
@@ -78,11 +78,11 @@ vnoremap $$ <esc>`>a"<esc>`<i"<esc>
 vnoremap $q <esc>`>a'<esc>`<i'<esc>
 vnoremap $e <esc>`>a"<esc>`<i"<esc>
 " 括号自动生成
-
+"
 set foldenable " 开始折叠
 set foldmethod=syntax " 设置语法折叠
 set foldcolumn=0 " 设置折叠区域的宽度
 setlocal foldlevel=1 " 设置折叠层数为
-set foldclose=all " 设置为自动关闭折叠 
+" set foldclose=all " 设置为自动关闭折叠 
 nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 " 用空格键来开关折叠
