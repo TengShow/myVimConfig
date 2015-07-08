@@ -43,10 +43,12 @@ setlocal foldlevel=3
 " set foldclose=all 
 nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 map <C-J> :!php -l %<CR>
+map <C-P> :!perl %<CR>
 
 syntax on
 autocmd FileType python setlocal et sta sw=4 sts=4 expandtab foldmethod=indent 
 autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType perl setlocal foldmethod=marker omnifunc=perlcomplete#CompletePerl
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS 
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags 
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS 
@@ -54,8 +56,7 @@ autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP 
 autocmd FileType c set omnifunc=ccomplete#Complete 
 
-"set high light
-set hls
+
 "set linebreak
 set number
 set ruler 
